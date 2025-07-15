@@ -1,200 +1,122 @@
-<meta charset="utf-8" emacsmode="-*- markdown -*-" />
-<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" />
-<link rel="stylesheet" href="./static/fontawesome.all.min.css" />
-<script defer src="./static/fontawesome.all.min.js"></script>
-<style>
-  body {
-    font-family: "Lato";
-    text-align: left;
-    margin: auto;
-    max-width: 95%;
-    color: #555;
-    font-size: 13pt;
-    padding-right: 20px;
-    overflow-x: hidden;
-    text-overflow: ellipses;
-  }
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Contrastive Representations for Temporal Reasoning (CRTR) is a method that enables temporal reasoning by eliminating spurious features via a novel negative sampling scheme. It achieves strong results on Sokoban and Rubik's Cube.">
+  <meta property="og:title" content="Contrastive Representations for Temporal Reasoning (CRTR)"/>
+  <meta property="og:description" content="CRTR enables temporal reasoning with learned representations and solves Sokoban and Rubik's Cube without heuristics."/>
+  <meta property="og:url" content="https://YOUR_WEBSITE_URL_HERE.com"/>
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
 
-  /* no numbering of headings */
-  h1:before,
-  h2:before,
-  h3:before,
-  h4:before,
-  h5:before,
-  h6:before {
-    content: none;
-  }
+  <meta name="twitter:title" content="Contrastive Representations for Temporal Reasoning">
+  <meta name="twitter:description" content="CRTR: Learning representations for temporal reasoning on domains like Sokoban and Rubik's Cube.">
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="Contrastive Learning, Temporal Reasoning, Representation Learning, Rubik's Cube, Sokoban, CRTR">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  .longTOC a {
-    color: #000;
-  }
+  <title>Contrastive Representations for Temporal Reasoning</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
-  .tocHeader,
-  .tocNumber {
-    display: none;
-  }
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
 
-  a,
-  div.title,
-  contents,
-  .tocHeader,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  .nonumberh1,
-  .nonumberh2,
-  .nonumberh3,
-  .nonumberh4,
-  .nonumberh5,
-  .nonumberh6,
-  .shortTOC,
-  .mediumTOC,
-  .longTOC {
-    font-family: inherit;
-  }
-
-  div.title,
-  h1,
-  h2,
-  h3,
-  h4 {
-    font-family: "Lato";
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    color: #555;
-    border-color: inherit;
-    text-align: center;
-    padding-top: 0.5em;
-  }
-
-  h2,
-  h3,
-  h4 {
-    border: none;
-  }
-
-  .tocTop {
-    display: inline;
-  }
-
-  div.title,
-  div.subtitle {
-    text-align: left;
-  }
-
-  div.title {
-    position: absolute;
-    top: -14px;
-    left: -200px;
-    right: 0px;
-    font-weight: 900;
-    padding-left: 10px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    text-shadow: 0px 0px 3px #00c8c8;
-    background-color: #00c8c8;
-    background-image: url("https://casual-effects.com/markdeep/website-banner.png");
-    background-repeat: no-repeat;
-    background-position: top right;
-    background-size: contain;
-    color: #fff;
-    font-size: 45px;
-    z-index: 10;
-  }
-
-  div.afterTitles {
-    height: 90px;
-  }
-
-  a {
-    color: #38a;
-    text-decoration: none;
-  }
-
-  .authors {
-    text-align: center;
-  }
-
-  .links {
-    text-align: center;
-  }
-
-  .links a {
-    font-size: 17pt;
-    margin: 0 8pt;
-  }
-
-  .links a > * {
-    margin: 0 3pt;
-  }
-
-  .abstract {
-    padding-top: 20px;
-    max-width: 60em;
-    width: 80%;
-    margin: 3ex auto;
-    padding-bottom: 1cm;
-  }
-
-  .teaser {
-    padding-top: 20px;
-    margin: 3ex auto;
-    text-align: center;
-    max-width: 80em;
-  }
-
-  .video {
-    text-align: center;
-    margin: 3ex auto;
-  }
-
-  body > div {
-    margin: 1ex auto;
-  }
-</style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
 <body>
-  <div>
-    <h1>Contrastive Representations for Temporal Reasoning</h1>
-  </div>
-  <div class="authors">
-    <a href="https://x.com/ZiarkoAlicja">Alicja Ziarko</a>,
-    <a href="https://x.com/m_bortkiewicz">Michał Bortkiewicz</a>,
-    <a href="https://x.com/MiZawalski">Michał Zawalski</a>,
-    <a href="https://ben-eysenbach.github.io/">Benjamin Eysenbach</a>
-    <a href="https://x.com/piotrrmilos/">Piotr Miłoś</a>
-  </div>
 
-  <p class="links">
-    <a href="https://github.com/MichalBortkiewicz/JaxGCRL"><i class="fas fa-code"></i>Code</a>
-    <a href="https://arxiv.org/abs/2408.11052"><i class="fas fa-file-alt"></i>Paper</a>
-  </p>
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Contrastive Representations for Temporal Reasoning</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><a href="https://x.com/ZiarkoAlicja" target="_blank">Alicja Ziarko</a><sup>*</sup>,</span>
+            <span class="author-block"><a href="https://x.com/m_bortkiewicz" target="_blank">Michał Bortkiewicz</a><sup>*</sup>,</span>
+            <span class="author-block"><a href="https://x.com/MiZawalski" target="_blank">Michał Zawalski</a>,</span>
+            <span class="author-block"><a href="https://ben-eysenbach.github.io/" target="_blank">Benjamin Eysenbach</a>,</span>
+            <span class="author-block"><a href="https://x.com/piotrrmilos/" target="_blank">Piotr Miłoś</a></span>
+          </div>
 
-  <div class="teaser">
-    <img src="imgs/teaser.jpg" alt="Teaser Image" width="80%" />
-  </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">University of Warsaw, Princeton University<br>Preprint, 2024</span>
+            <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+          </div>
 
-  <div class="abstract">
-    <p>
-      <b>Abstract:</b> In classical AI, perception relies on learning spatial representations,
-        while planning—temporal reasoning over action sequences—is typically achieved through search.
-        We study whether such reasoning can instead emerge from representations that capture both spatial and temporal structure.
-        We show that standard temporal contrastive learning, despite its popularity, often fails to capture temporal structure,
-        due to reliance on spurious features. To address this, we introduce <b>Contrastive Representations for Temporal Reasoning (CRTR)</b>,
-        a method that uses a negative sampling scheme to provably remove these spurious features and facilitate temporal reasoning.
-        CRTR achieves strong results on domains with complex temporal structure, such as Sokoban and Rubik’s Cube.
-        In particular, for the Rubik’s Cube, CRTR learns representations that generalize across all initial states and allow
-        solving the puzzle much faster than BestFS—though with longer solutions. To our knowledge, this is the first
-        demonstration of efficiently solving arbitrary Cube states using only learned representations, without hand-crafted search heuristics.
-    </p>
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2408.11052.pdf" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2408.11052" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="ai ai-arxiv"></i></span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/MichalBortkiewicz/JaxGCRL" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Code</span>
+                </a>
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
   </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="imgs/teaser.jpg" alt="Teaser Image" width="80%"/>
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            In classical AI, perception relies on learning spatial representations,
+            while planning—temporal reasoning over action sequences—is typically achieved through search.
+            We study whether such reasoning can instead emerge from representations that capture both spatial and temporal structure.
+            We show that standard temporal contrastive learning, despite its popularity, often fails to capture temporal structure,
+            due to reliance on spurious features. To address this, we introduce <b>Contrastive Representations for Temporal Reasoning (CRTR)</b>,
+            a method that uses a negative sampling scheme to provably remove these spurious features and facilitate temporal reasoning.
+            CRTR achieves strong results on domains with complex temporal structure, such as Sokoban and Rubik’s Cube.
+            In particular, for the Rubik’s Cube, CRTR learns representations that generalize across all initial states and allow
+            solving the puzzle much faster than BestFS—though with longer solutions. To our knowledge, this is the first
+            demonstration of efficiently solving arbitrary Cube states using only learned representations, without hand-crafted search heuristics.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 </body>
-
+</html>
