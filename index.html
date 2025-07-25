@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Contrastive Representations for Temporal Reasoning</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <!-- <link rel="icon" type="image/x-icon" href="static/images/favicon.ico"> -->
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="static/css/bulma.min.css">
@@ -110,6 +110,7 @@
   </div>
 </section>
 
+<br>
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body has-text-centered">
@@ -120,6 +121,21 @@
         Colors correspond to trajectories; three frames from two trajectories are shown in the center and linked to their representations.
         CRL embeddings cluster tightly within trajectories, failing to capture global structure and limiting their usefulness for planning.
         In contrast, CRTR organizes representations meaningfully across trajectories and time (vertical axis).
+      </h2>
+    </div>
+  </div>
+</section>
+
+<br>
+<section class="hero">
+  <div class="container is-max-desktop">
+    <div class="hero-body has-text-centered">
+      <h2 class="title is-3">CRTR results in representations that allow for solving combinatorial reasoning tasks.</h2><br>
+      <img src="imgs/figure_1.png" alt="Teaser Image" style="display: inline-block; width: 100%;" />
+      <h2 class="subtitle has-text-centered">
+        CRTR performs well in all the evaluated domains. Success rate as a function of search budget across five domains. 
+        CRTR compared to baselines: CRL, Supervised and DeepCubeA. Results are averaged over 5 seeds; shaded regions indicate standard error. 
+        For the Rubik's Cube, both the supervised and random baselines achieve a success rate of zero for all search budgets.
       </h2>
     </div>
   </div>
