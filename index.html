@@ -26,6 +26,98 @@
 </head>
 <body>
 
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Contrastive Representations for Temporal Reasoning</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><a href="https://x.com/ZiarkoAlicja" target="_blank">Alicja Ziarko</a>,</span>
+              <span class="author-block"><a href="https://x.com/m_bortkiewicz" target="_blank">Michał Bortkiewicz</a>,</span>
+              <span class="author-block"><a href="https://x.com/MiZawalski" target="_blank">Michał Zawalski</a>,</span>
+              <span class="author-block"><a href="https://ben-eysenbach.github.io/" target="_blank">Benjamin Eysenbach</a><sup>*</sup>,</span>
+              <span class="author-block"><a href="https://x.com/piotrrmilos/" target="_blank">Piotr Miłoś</a><sup>*</sup></span>
+            </div>
+  
+            <div class="is-size-5 publication-authors">
+              <!-- <span class="author-block">University of Warsaw, Princeton University<br>Preprint, 2024</span> -->
+              <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Advising Contribution</small></span>
+            </div>
+  
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://princeton-rl.github.io/CRTR/" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://princeton-rl.github.io/CRTR/" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="ai ai-arxiv"></i></span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://github.com/Princeton-RL/CRTR" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>Code</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              In classical AI, perception relies on learning spatial representations,
+              while planning—temporal reasoning over action sequences—is typically achieved through search.
+              We study whether such reasoning can instead emerge from representations that capture both spatial and temporal structure.
+              We show that standard temporal contrastive learning, despite its popularity, often fails to capture temporal structure,
+              due to reliance on spurious features. To address this, we introduce <b>Contrastive Representations for Temporal Reasoning (CRTR)</b>,
+              a method that uses a negative sampling scheme to provably remove these spurious features and facilitate temporal reasoning.
+              CRTR achieves strong results on domains with complex temporal structure, such as Sokoban and Rubik’s Cube.
+              In particular, for the Rubik’s Cube, CRTR learns representations that generalize across all initial states and allow
+              solving the puzzle much faster than BestFS—though with longer solutions. To our knowledge, this is the first
+              demonstration of efficiently solving arbitrary Cube states using only learned representations, without hand-crafted search heuristics.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <br>
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body has-text-centered">
+        <h2 class="title is-3">CRTR makes representations reflect the structure of combinatorial tasks.</h2>
+        <img src="imgs/figure_1.png" alt="Teaser Image" style="display: inline-block; width: 100%;" />
+        <h2 class="subtitle has-text-centered">
+          t-SNE visualization of representations learned by CRTR (right) and CRL (left) for Sokoban.
+          Colors correspond to trajectories; three frames from two trajectories are shown in the center and linked to their representations.
+          CRL embeddings cluster tightly within trajectories, failing to capture global structure and limiting their usefulness for planning.
+          In contrast, CRTR organizes representations meaningfully across trajectories and time (vertical axis).
+        </h2>
+      </div>
+    </div>
+  </section>
+  
+  <br>
+  
+
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
