@@ -74,7 +74,27 @@
     </div>
   </section>
   
+  <section class="hero teaser" style="padding: 0; margin-top: -2rem;">
+    <div class="container is-max-desktop">
+      <div class="hero-body has-text-centered" style="padding: 0;">
+        <img src="imgs/figure_1.png" alt="Teaser Image" style="display: inline-block; width: 90%; margin-left: 5%;" />
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <div class="content has-text-justified">
+              <p>
+                <b>CRTR makes representations reflect the structure of combinatorial tasks.</b> t-SNE visualization of representations learned by CRTR (right) and CRL (left) for Sokoban.
+                Colors correspond to trajectories; three frames from two trajectories are shown in the center and linked to their representations.
+                CRL embeddings cluster tightly within trajectories, failing to capture global structure and limiting their usefulness for planning.
+                In contrast, CRTR organizes representations meaningfully across trajectories and time (vertical axis).
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   
+  <br>
   <section class="section hero is-light">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
@@ -100,44 +120,25 @@
   </section>
   
   <br>
-  <section class="hero teaser">
-    <div class="container is-max-desktop">
-      <div class="hero-body has-text-centered">
-        <h2 class="title is-3">CRTR makes representations reflect the structure of combinatorial tasks.</h2>
-        <img src="imgs/figure_1.png" alt="Teaser Image" style="display: inline-block; width: 100%;" />
-        <h2 class="subtitle has-text-centered">
-          t-SNE visualization of representations learned by CRTR (right) and CRL (left) for Sokoban.
-          Colors correspond to trajectories; three frames from two trajectories are shown in the center and linked to their representations.
-          CRL embeddings cluster tightly within trajectories, failing to capture global structure and limiting their usefulness for planning.
-          In contrast, CRTR organizes representations meaningfully across trajectories and time (vertical axis).
-        </h2>
-      </div>
-    </div>
-  </section>
-  
+  <br>
   <br>
   
 
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">CRTR Experiments</h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">Experimental Results and Figures</span>
-          </div>
-        </div>
+<section class="section hero is-light" style="padding: 2 2;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3">Experiments</h2>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section hero is-light">
+<section class="section hero">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Main Results</h2>
+        <h2 class="title is-4" style="background-color: #e0e0e0; padding: 1rem; margin-bottom: 1.5rem; border-radius: 4px;">Main Results</h2>
         <div class="content has-text-justified">
           <p>
             CRTR performs well in all the evaluated domains. Success rate as a function of search budget across five domains. 
@@ -146,13 +147,13 @@
           </p>
         </div>
         <div class="has-text-centered">
-          <img src="images/arxiv_plots/solved_rates_search_rubik-2.pdf" alt="Rubik's Cube Results" style="width: 32%; display: inline-block; margin: 5px;">
-          <img src="images/arxiv_plots/solved_rates_search_lo-2.pdf" alt="Lights Out Results" style="width: 30%; display: inline-block; margin: 5px;">
-          <img src="images/arxiv_plots/solved_rates_search_sokoban-2.pdf" alt="Sokoban Results" style="width: 30%; display: inline-block; margin: 5px;">
+          <img src="images/png_converted/solved_rates_search_rubik-2.png" alt="Rubik's Cube Results" style="width: 32%; display: inline-block; margin: 5px;">
+          <img src="images/png_converted/solved_rates_search_lo-2.png" alt="Lights Out Results" style="width: 30%; display: inline-block; margin: 5px;">
+          <img src="images/png_converted/solved_rates_search_sokoban-2.png" alt="Sokoban Results" style="width: 30%; display: inline-block; margin: 5px;">
           <br>
-          <img src="images/arxiv_plots/solved_rates_search_dj-3.pdf" alt="Digit Jumper Results" style="width: 32%; display: inline-block; margin: 5px;">
-          <img src="images/arxiv_plots/solved_rates_search_15puzzle-11.pdf" alt="15-Puzzle Results" style="width: 30%; display: inline-block; margin: 5px;">
-          <img src="images/arxiv_plots/legend_lo_square-3.pdf" alt="Legend" style="width: 20%; display: inline-block; margin: 5px;">
+          <img src="images/png_converted/solved_rates_search_dj-3.png" alt="Digit Jumper Results" style="width: 32%; display: inline-block; margin: 5px; margin-left: -30px">
+          <img src="images/png_converted/solved_rates_search_15puzzle-11.png" alt="15-Puzzle Results" style="width: 30%; display: inline-block; margin: 5px;">
+          <img src="images/png_converted/legend_lo_square-3.png" alt="Legend" style="width: 20%; display: inline-block; margin: 5px;margin-bottom: 30px; margin-left: 5%;">
         </div>
       </div>
     </div>
@@ -163,38 +164,38 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Correlation Analysis</h2>
+        <h2 class="title is-4" style="background-color: #e0e0e0; padding: 1rem; margin-bottom: 1.5rem; border-radius: 4px;">Correlation Analysis</h2>
         <div class="content has-text-justified">
           <p>
             Distances given by CRTR representations reflect the temporal structure well. Correlation (Spearman's ρ) between the distance induced by learned embeddings and actual distance across the training, CRTR compared with CRL.
           </p>
         </div>
         <div class="has-text-centered">
-          <img src="images/arxiv_plots/sokoban_correlation-4.pdf" alt="Sokoban Correlation" style="width: 50%; display: inline-block;">
+          <img src="images/png_converted/sokoban_correlation-4.png" alt="Sokoban Correlation" style="width: 50%; display: inline-block;">
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section hero is-light">
+<section class="section hero">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">No Search Results</h2>
+      <div class="column">
+        <h2 class="title is-4" style="background-color: #e0e0e0; padding: 1rem; margin-bottom: 1.5rem; border-radius: 4px;">No Search Results</h2>
         <div class="content has-text-justified">
           <p>
             CRTR solves most tasks without requiring any search. Adding BestFS results in shorter solutions. We plot the fraction of configurations solved with a solution length of at most x, while limiting the number of nodes created to 6000. Surprisingly, on the Rubik's cube CRTR achieves a higher success rate without search, solving all board configurations within the budget.
           </p>
         </div>
         <div class="has-text-centered">
-          <img src="images/length_plots/no_search_len_Rubik-6.pdf" alt="Rubik's Cube No Search" style="width: 26%; display: inline-block; margin: 2px;">
-          <img src="images/length_plots/no_search_len_Lights Out-5.pdf" alt="Lights Out No Search" style="width: 21.5%; display: inline-block; margin: 2px;">
-          <img src="images/length_plots/no_search_len_Sokoban-5.pdf" alt="Sokoban No Search" style="width: 20.5%; display: inline-block; margin: 2px;">
-          <img src="images/length_plots/no_search_len_Digit Jumper-6.pdf" alt="Digit Jumper No Search" style="width: 19.5%; display: inline-block; margin: 2px;">
-          <img src="images/length_plots/no_search_len_15-Puzzle-1.pdf" alt="15-Puzzle No Search" style="width: 20%; display: inline-block; margin: 2px;">
+          <img src="images/png_converted/no_search_len_Rubik-6.png" alt="Rubik's Cube No Search" style="width: 20%; display: inline-block; margin: 1px;">
+          <img src="images/png_converted/no_search_len_Lights_Out-5.png" alt="Lights Out No Search" style="width: 16.5%; display: inline-block; margin: 1px;">
+          <img src="images/png_converted/no_search_len_Sokoban-5.png" alt="Sokoban No Search" style="width: 16%; display: inline-block; margin: 1px;">
+          <img src="images/png_converted/no_search_len_Digit_Jumper-6.png" alt="Digit Jumper No Search" style="width: 15%; display: inline-block; margin: 1px;">
+          <img src="images/png_converted/no_search_len_15-Puzzle-1.png" alt="15-Puzzle No Search" style="width: 15.5%; display: inline-block; margin: 1px;">
           <br>
-          <img src="images/legend_15-Puzzle.pdf" alt="Legend" style="width: 60%; display: inline-block; margin-top: 20px;">
+          <img src="images/png_converted/legend_15-Puzzle.png" alt="Legend" style="width: 60%; display: inline-block; margin-top: 20px;">
         </div>
       </div>
     </div>
@@ -205,14 +206,14 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Block Building Behavior</h2>
+        <h2 class="title is-4" style="background-color: #e0e0e0; padding: 1rem; margin-bottom: 1.5rem; border-radius: 4px;">Block Building Behavior</h2>
         <div class="content has-text-justified">
           <p>
             CRTR without search exhibits a block-building-like behavior. Intermediate states from solving a randomly scrambled cube, illustrating how the algorithm gradually builds partial structure. The average solve is about 400 moves, and we see similar block building behavior across solves.
           </p>
         </div>
         <div class="has-text-centered">
-          <img src="images/cube visualization [July 2025].pdf" alt="Cube Visualization" style="width: 100%; display: inline-block;">
+          <img src="images/png_converted/cube_visualization.png" alt="Cube Visualization" style="width: 100%; display: inline-block;">
         </div>
       </div>
     </div>
