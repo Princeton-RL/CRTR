@@ -33,11 +33,11 @@
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title">Contrastive Representations for Temporal Reasoning</h1>
             <div class="is-size-5 publication-authors">
-              <span class="author-block"><a href="https://x.com/ZiarkoAlicja" target="_blank">Alicja Ziarko</a>,</span>
-              <span class="author-block"><a href="https://x.com/m_bortkiewicz" target="_blank">Michał Bortkiewicz</a>,</span>
-              <span class="author-block"><a href="https://x.com/MiZawalski" target="_blank">Michał Zawalski</a>,</span>
-              <span class="author-block"><a href="https://ben-eysenbach.github.io/" target="_blank">Benjamin Eysenbach</a><sup>*</sup>,</span>
-              <span class="author-block"><a href="https://x.com/piotrrmilos/" target="_blank">Piotr Miłoś</a><sup>*</sup></span>
+              <span class="author-block"><a href="https://x.com/ZiarkoAlicja" target="_blank" style="color: #6c757d;">Alicja Ziarko</a>,</span>
+              <span class="author-block"><a href="https://x.com/m_bortkiewicz" target="_blank" style="color: #6c757d;">Michał Bortkiewicz</a>,</span>
+              <span class="author-block"><a href="https://x.com/MiZawalski" target="_blank" style="color: #6c757d;">Michał Zawalski</a>,</span>
+              <span class="author-block"><a href="https://ben-eysenbach.github.io/" target="_blank" style="color: #6c757d;">Benjamin Eysenbach</a><sup>*</sup>,</span>
+              <span class="author-block"><a href="https://x.com/piotrrmilos/" target="_blank" style="color: #6c757d;">Piotr Miłoś</a><sup>*</sup></span>
             </div>
   
             <div class="is-size-5 publication-authors">
@@ -48,19 +48,19 @@
             <div class="column has-text-centered">
               <div class="publication-links">
                 <span class="link-block">
-                  <a href="https://princeton-rl.github.io/CRTR/" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://princeton-rl.github.io/CRTR/" target="_blank" class="external-link button is-normal is-rounded" style="background-color: #6c757d; border-color: #6c757d; color: white; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#5a6268'; this.style.borderColor='#5a6268'; this.style.transform='scale(1.05)'" onmouseout="this.style.backgroundColor='#6c757d'; this.style.borderColor='#6c757d'; this.style.transform='scale(1)'">
                     <span class="icon"><i class="fas fa-file-pdf"></i></span>
                     <span>Paper</span>
                   </a>
                 </span>
                 <span class="link-block">
-                  <a href="https://princeton-rl.github.io/CRTR/" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://princeton-rl.github.io/CRTR/" target="_blank" class="external-link button is-normal is-rounded" style="background-color: #6c757d; border-color: #6c757d; color: white; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#5a6268'; this.style.borderColor='#5a6268'; this.style.transform='scale(1.05)'" onmouseout="this.style.backgroundColor='#6c757d'; this.style.borderColor='#6c757d'; this.style.transform='scale(1)'">
                     <span class="icon"><i class="ai ai-arxiv"></i></span>
                     <span>arXiv</span>
                   </a>
                 </span>
                 <span class="link-block">
-                  <a href="https://github.com/Princeton-RL/CRTR" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://github.com/Princeton-RL/CRTR" target="_blank" class="external-link button is-normal is-rounded" style="background-color: #6c757d; border-color: #6c757d; color: white; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#5a6268'; this.style.borderColor='#5a6268'; this.style.transform='scale(1.05)'" onmouseout="this.style.backgroundColor='#6c757d'; this.style.borderColor='#6c757d'; this.style.transform='scale(1)'">
                     <span class="icon"><i class="fab fa-github"></i></span>
                     <span>Code</span>
                   </a>
@@ -74,7 +74,23 @@
     </div>
   </section>
   
-  <section class="hero teaser" style="padding: 0; margin-top: -2rem;">
+  <div class="content has-text-justified">
+    <div class="box" style="background-color: #f5f5f5; border: 1px solid #e0e0e0; margin: -1rem auto 0 auto; max-width: 800px;">
+      <div class="columns">
+        <div class="column">
+          <p><i class="fas fa-lightbulb"></i> <strong>Key Question:</strong> Can we improve temporal reasoning by learning better representations?</p>
+        </div>
+        <div class="column">
+          <p><i class="fas fa-cogs"></i> <strong>Method:</strong> A novel negative sampling scheme provably enables learning temporal representations. </p>
+        </div>
+        <div class="column">
+          <p><i class="fas fa-trophy"></i> <strong>Result:</strong> CRTR learns representations that enable solving Rubik's Cube without hand-crafted heuristics and improves the success rates overall. </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <section class="hero teaser" style="padding: 0; margin-top: 0;">
     <div class="container is-max-desktop">
       <div class="hero-body has-text-centered" style="padding: 0;">
         <img src="imgs/figure_1.png" alt="Teaser Image" style="display: inline-block; width: 90%; margin-left: 5%;" />
@@ -89,18 +105,20 @@
               </p>
             </div>
           </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
   
   <br>
-  <section class="section hero is-light">
+  <section class="section hero">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Abstract</h2>
-          <div class="content has-text-justified">
+        <div class="column">
+          <div style="background-color: #f5f5f5; padding: 2rem; margin: 0 auto; max-width: 800px; border-radius: 8px;">
+            <h2 class="title is-3" style="margin-bottom: 1.5rem;">Abstract</h2>
+            <div class="content has-text-justified">
             <p>
               In classical AI, perception relies on learning spatial representations,
               while planning—temporal reasoning over action sequences—is typically achieved through search.
@@ -118,21 +136,18 @@
       </div>
     </div>
   </section>
-  
-  <br>
-  <br>
-  <br>
-  
+ 
 
-<section class="section hero is-light" style="padding: 2 2;">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column">
-        <h2 class="title is-3">Experiments</h2>
+  <div class="columns is-centered has-text-centered" style="background-color: #f5f5f5; max-width: 800px; margin: 0 auto; padding: 1rem -80px;">
+    <section class="section hero">
+      <div class="container is-max-desktop">
+          <div class="column">
+            <h2 class="title is-3">Experiments</h2>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   </div>
-</section>
 
 <section class="section hero">
   <div class="container is-max-desktop">
@@ -181,7 +196,7 @@
 <section class="section hero">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
-      <div class="column">
+      <div class="column is-four-fifths">
         <h2 class="title is-4" style="background-color: #e0e0e0; padding: 1rem; margin-bottom: 1.5rem; border-radius: 4px;">No Search Results</h2>
         <div class="content has-text-justified">
           <p>
