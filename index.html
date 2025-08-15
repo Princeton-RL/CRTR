@@ -2,23 +2,12 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="Contrastive Representations for Temporal Reasoning (CRTR) is a method that enables temporal reasoning by eliminating spurious features via a novel negative sampling scheme. It achieves strong results on Sokoban and Rubik's Cube.">
-  <meta property="og:title" content="Contrastive Representations for Temporal Reasoning (CRTR)"/>
-  <meta property="og:description" content="CRTR enables temporal reasoning with learned representations and solves Sokoban and Rubik's Cube without heuristics."/>
-  <!-- <meta property="og:url" content="https://YOUR_WEBSITE_URL_HERE.com"/>
-  <meta property="og:image" content="static/image/your_banner_image.png" /> -->
-  <!-- <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/> -->
-
-  <meta name="twitter:title" content="Contrastive Representations for Temporal Reasoning">
-  <meta name="twitter:description" content="CRTR: Learning representations for temporal reasoning on domains like Sokoban and Rubik's Cube.">
-  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="keywords" content="Contrastive Learning, Temporal Reasoning, Representation Learning, Rubik's Cube, Sokoban, CRTR">
+  <meta name="description" content="Experiments - Contrastive Representations for Temporal Reasoning (CRTR)">
+  <meta property="og:title" content="CRTR Experiments"/>
+  <meta property="og:description" content="Experimental results and figures from CRTR research."/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Contrastive Representations for Temporal Reasoning</title>
-  <!-- <link rel="icon" type="image/x-icon" href="static/images/favicon.ico"> -->
+  <title>CRTR Experiments</title>
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="static/css/bulma.min.css">
@@ -42,101 +31,98 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Contrastive Representations for Temporal Reasoning</h1>
+          <h1 class="title is-1 publication-title">CRTR Experiments</h1>
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><a href="https://x.com/ZiarkoAlicja" target="_blank">Alicja Ziarko</a>,</span>
-            <span class="author-block"><a href="https://x.com/m_bortkiewicz" target="_blank">Michał Bortkiewicz</a>,</span>
-            <span class="author-block"><a href="https://x.com/MiZawalski" target="_blank">Michał Zawalski</a>,</span>
-            <span class="author-block"><a href="https://ben-eysenbach.github.io/" target="_blank">Benjamin Eysenbach</a><sup>*</sup>,</span>
-            <span class="author-block"><a href="https://x.com/piotrrmilos/" target="_blank">Piotr Miłoś</a><sup>*</sup></span>
+            <span class="author-block">Experimental Results and Figures</span>
           </div>
-
-          <div class="is-size-5 publication-authors">
-            <!-- <span class="author-block">University of Warsaw, Princeton University<br>Preprint, 2024</span> -->
-            <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Advising Contribution</small></span>
-          </div>
-
-          <div class="column has-text-centered">
-            <div class="publication-links">
-              <span class="link-block">
-                <a href="https://princeton-rl.github.io/CRTR/" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
-                  <span>Paper</span>
-                </a>
-              </span>
-              <span class="link-block">
-                <a href="https://princeton-rl.github.io/CRTR/" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon"><i class="ai ai-arxiv"></i></span>
-                  <span>arXiv</span>
-                </a>
-              </span>
-              <span class="link-block">
-                <a href="https://github.com/Princeton-RL/CRTR" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon"><i class="fab fa-github"></i></span>
-                  <span>Code</span>
-                </a>
-              </span>
-            </div>
-          </div>
-
         </div>
       </div>
     </div>
   </div>
 </section>
-
 
 <section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
+        <h2 class="title is-3">Main Results</h2>
         <div class="content has-text-justified">
           <p>
-            In classical AI, perception relies on learning spatial representations,
-            while planning—temporal reasoning over action sequences—is typically achieved through search.
-            We study whether such reasoning can instead emerge from representations that capture both spatial and temporal structure.
-            We show that standard temporal contrastive learning, despite its popularity, often fails to capture temporal structure,
-            due to reliance on spurious features. To address this, we introduce <b>Contrastive Representations for Temporal Reasoning (CRTR)</b>,
-            a method that uses a negative sampling scheme to provably remove these spurious features and facilitate temporal reasoning.
-            CRTR achieves strong results on domains with complex temporal structure, such as Sokoban and Rubik’s Cube.
-            In particular, for the Rubik’s Cube, CRTR learns representations that generalize across all initial states and allow
-            solving the puzzle much faster than BestFS—though with longer solutions. To our knowledge, this is the first
-            demonstration of efficiently solving arbitrary Cube states using only learned representations, without hand-crafted search heuristics.
+            CRTR performs well in all the evaluated domains. Success rate as a function of search budget across five domains. 
+            CRTR compared to baselines: CRL, Supervised and DeepCubeA. Results are averaged over 5 seeds; shaded regions indicate standard error. 
+            For the Rubik's Cube, both the supervised and random baselines achieve a success rate of zero for all search budgets.
           </p>
+        </div>
+        <div class="has-text-centered">
+          <img src="images/arxiv_plots/solved_rates_search_rubik-2.pdf" alt="Rubik's Cube Results" style="width: 32%; display: inline-block; margin: 5px;">
+          <img src="images/arxiv_plots/solved_rates_search_lo-2.pdf" alt="Lights Out Results" style="width: 30%; display: inline-block; margin: 5px;">
+          <img src="images/arxiv_plots/solved_rates_search_sokoban-2.pdf" alt="Sokoban Results" style="width: 30%; display: inline-block; margin: 5px;">
+          <br>
+          <img src="images/arxiv_plots/solved_rates_search_dj-3.pdf" alt="Digit Jumper Results" style="width: 32%; display: inline-block; margin: 5px;">
+          <img src="images/arxiv_plots/solved_rates_search_15puzzle-11.pdf" alt="15-Puzzle Results" style="width: 30%; display: inline-block; margin: 5px;">
+          <img src="images/arxiv_plots/legend_lo_square-3.pdf" alt="Legend" style="width: 20%; display: inline-block; margin: 5px;">
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<br>
-<section class="hero teaser">
+<section class="section hero">
   <div class="container is-max-desktop">
-    <div class="hero-body has-text-centered">
-      <h2 class="title is-3">CRTR makes representations reflect the structure of combinatorial tasks.</h2>
-      <img src="imgs/figure_1.png" alt="Teaser Image" style="display: inline-block; width: 100%;" />
-      <h2 class="subtitle has-text-centered">
-        t-SNE visualization of representations learned by CRTR (right) and CRL (left) for Sokoban.
-        Colors correspond to trajectories; three frames from two trajectories are shown in the center and linked to their representations.
-        CRL embeddings cluster tightly within trajectories, failing to capture global structure and limiting their usefulness for planning.
-        In contrast, CRTR organizes representations meaningfully across trajectories and time (vertical axis).
-      </h2>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Correlation Analysis</h2>
+        <div class="content has-text-justified">
+          <p>
+            Distances given by CRTR representations reflect the temporal structure well. Correlation (Spearman's ρ) between the distance induced by learned embeddings and actual distance across the training, CRTR compared with CRL.
+          </p>
+        </div>
+        <div class="has-text-centered">
+          <img src="images/arxiv_plots/sokoban_correlation-4.pdf" alt="Sokoban Correlation" style="width: 50%; display: inline-block;">
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<br>
-<section class="hero">
+<section class="section hero is-light">
   <div class="container is-max-desktop">
-    <div class="hero-body has-text-centered">
-      <h2 class="title is-3">CRTR results in representations that allow for solving combinatorial reasoning tasks.</h2><br>
-      <img src="imgs/figure_1.png" alt="Teaser Image" style="display: inline-block; width: 100%;" />
-      <h2 class="subtitle has-text-centered">
-        CRTR performs well in all the evaluated domains. Success rate as a function of search budget across five domains. 
-        CRTR compared to baselines: CRL, Supervised and DeepCubeA. Results are averaged over 5 seeds; shaded regions indicate standard error. 
-        For the Rubik's Cube, both the supervised and random baselines achieve a success rate of zero for all search budgets.
-      </h2>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">No Search Results</h2>
+        <div class="content has-text-justified">
+          <p>
+            CRTR solves most tasks without requiring any search. Adding BestFS results in shorter solutions. We plot the fraction of configurations solved with a solution length of at most x, while limiting the number of nodes created to 6000. Surprisingly, on the Rubik's cube CRTR achieves a higher success rate without search, solving all board configurations within the budget.
+          </p>
+        </div>
+        <div class="has-text-centered">
+          <img src="images/length_plots/no_search_len_Rubik-6.pdf" alt="Rubik's Cube No Search" style="width: 26%; display: inline-block; margin: 2px;">
+          <img src="images/length_plots/no_search_len_Lights Out-5.pdf" alt="Lights Out No Search" style="width: 21.5%; display: inline-block; margin: 2px;">
+          <img src="images/length_plots/no_search_len_Sokoban-5.pdf" alt="Sokoban No Search" style="width: 20.5%; display: inline-block; margin: 2px;">
+          <img src="images/length_plots/no_search_len_Digit Jumper-6.pdf" alt="Digit Jumper No Search" style="width: 19.5%; display: inline-block; margin: 2px;">
+          <img src="images/length_plots/no_search_len_15-Puzzle-1.pdf" alt="15-Puzzle No Search" style="width: 20%; display: inline-block; margin: 2px;">
+          <br>
+          <img src="images/legend_15-Puzzle.pdf" alt="Legend" style="width: 60%; display: inline-block; margin-top: 20px;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Block Building Behavior</h2>
+        <div class="content has-text-justified">
+          <p>
+            CRTR without search exhibits a block-building-like behavior. Intermediate states from solving a randomly scrambled cube, illustrating how the algorithm gradually builds partial structure. The average solve is about 400 moves, and we see similar block building behavior across solves.
+          </p>
+        </div>
+        <div class="has-text-centered">
+          <img src="images/cube visualization [July 2025].pdf" alt="Cube Visualization" style="width: 100%; display: inline-block;">
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -146,17 +132,15 @@
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
-
           <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
             <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
-
         </div>
       </div>
     </div>
   </div>
 </footer>
 </body>
-</html>
+</html> 
