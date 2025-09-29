@@ -36,7 +36,7 @@ huggingface-cli download oolongie/rubik_randomly_shuffled --repo-type dataset  -
 ```
 You can also generate the dataset by running:
 ```bash
-rubik_generate_script.py <number_of_shuffles (the paper uses 21)> <save_folder>
+python rubik_generate_script.py <number_of_shuffles (the paper uses 21)> <save_folder>
 ```
 
 ### Sokoban
