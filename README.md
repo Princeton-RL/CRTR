@@ -34,7 +34,10 @@ The dataset for the Rubik's Cube requires `12GB` of available storage. Download 
 ```bash
     huggingface-cli download oolongie/rubik_randomly_shuffled --repo-type dataset  --local-dir training_datasets/rubik
 ```
-
+You can also generate the dataset by running
+```bash
+    rubik_generate_script.py <number_of_shuffles (the paper uses 21)> <save_folder>
+```
 
 ### Sokoban
 The dataset for Sokoban requires `14GB` of available storage. Download it by running:
