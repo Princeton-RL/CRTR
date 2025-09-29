@@ -10,7 +10,7 @@ Official repository of [Contrastive Representations for Temporal Reasoning](TODO
 ## Installation
 We recommend using Python v3.10. Set up the repository by running:
 ```bash
-  pip install -e .
+pip install -e .
 ```
 
 
@@ -23,20 +23,20 @@ The example datasets for the Rubik's Cube and Sokoban are stored in `example_dat
 ```pip install -U "huggingface_hub[cli]"```
 #### Install git lfs (for Ubuntu):
 ```bash
-    sudo apt-get update
-    sudo apt-get install git-lfs
-    git lfs install
+sudo apt-get update
+sudo apt-get install git-lfs
+git lfs install
 ```
 
 
 ### Rubik's Cube
 The dataset for the Rubik's Cube requires `12GB` of available storage. Download it by running:
 ```bash
-    huggingface-cli download oolongie/rubik_randomly_shuffled --repo-type dataset  --local-dir training_datasets/rubik
+huggingface-cli download oolongie/rubik_randomly_shuffled --repo-type dataset  --local-dir training_datasets/rubik
 ```
-You can also generate the dataset by running
+You can also generate the dataset by running:
 ```bash
-    rubik_generate_script.py <number_of_shuffles (the paper uses 21)> <save_folder>
+rubik_generate_script.py <number_of_shuffles (the paper uses 21)> <save_folder>
 ```
 
 ### Sokoban
@@ -59,7 +59,7 @@ For the example dataset:
 python runner.py --config_file configs/train/crtr/rubik.gin
 ```
 For the real dataset:
-```bash 
+```bash
 python runner.py --config_file configs/train/crtr/rubik.gin --gin_bindings "ContrastiveDataset.path=training_datasets/rubik"
 ```
 
