@@ -122,10 +122,11 @@ class Cube(object):
         (see above)
         """
         self.N = N
+
         if stickers is None:
             self.stickers = np.array([np.tile(i, (self.N, self.N)) for i in range(6)])
         else:
-            mapping = {'y': 0, 'w': 1, 'r': 2, 'o': 3, 'g': 4, 'b': 5}
+            mapping = {'o': 0, 'y': 1, 'r': 2, 'b': 3, 'g': 4, 'w': 5}
             reverse_mapping = {v: k for k, v in mapping.items()}
             if not (type(stickers[0]) == str or type(stickers[0]) == np.str_):
                 # if element type is not int, take .item()
@@ -136,7 +137,6 @@ class Cube(object):
 
             stickers = ''.join(stickers)
             self.stickers = cube_str_to_state(stickers)
-
 
         self.stickercolors = ["w", "#ffcf00", "#00008f", "#009f0f", "#ff6f00", "#cf0000"]
         self.stickerthickness = 0.001  # sticker thickness in units of total cube size
